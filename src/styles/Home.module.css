@@ -1,0 +1,58 @@
+#header {
+  height: 60px;
+  border: 1px solid cyan;
+}
+
+/* .page-container {
+  background-image: url("./assets/JS_left.jpeg");
+  background-size: contain;
+} */
+
+.before-fold {
+  min-height: calc(100vh - 60px);
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(15px);
+  background-image: url("./assets/trianglify-lowres.png");
+  background-size: cover;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.chatbot-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border-radius: 10px;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  padding: 0.25rem;
+}
+
+.title {
+  font-family: "Bungee";
+  font-size: calc(30px + (75 - 30) * ((100vw - 300px) / (1600 - 300)));
+  flex-direction: column;
+  justify-content: center;
+}
+
+@keyframes blink {
+  50% {
+    color: transparent;
+  }
+}
+
+.title-cursor {
+  animation: blink 1s steps(1, start) 0s infinite;
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+}
