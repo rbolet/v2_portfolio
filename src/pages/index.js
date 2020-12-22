@@ -1,29 +1,20 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "../Home/styles/Home.module.css";
+import Title from "../Home/components/Title";
 
 export default function Home() {
   return (
-    <div id="root">
-      <div id="header"></div>
-      <div class="page-container">
-        <div class="before-fold">
-          <div class="row">
-            <div class="title-container">
-              <div class="title">
-                <p>
-                  Rapha
-                  <br />
-                  Bolet
-                </p>
-                <p>
-                  Developer<span id="title-cursor">_</span>
-                </p>
-              </div>
-            </div>
-            <div class="chatbot-container"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <Head>
+        <title>Hi! I'm Rapha ...</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <nav className={styles.header} />
+      <main className={styles.beforeFold}>
+        <section className={styles.row}>
+          <Title />
+        </section>
+      </main>
+    </>
   );
 }

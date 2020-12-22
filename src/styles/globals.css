@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif",
     "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  background-color: black;
 }
 
 a {
@@ -14,5 +15,4 @@ a {
 * {
   box-sizing: border-box;
   color: white;
-  margin: 0;
 }
