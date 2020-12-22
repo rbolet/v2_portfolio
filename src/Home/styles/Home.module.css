@@ -34,7 +34,7 @@
 .title {
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 0;
   font-family: "Bungee";
   font-size: calc(30px + (75 - 30) * ((100vw - 300px) / (1600 - 300)));
   flex-direction: column;

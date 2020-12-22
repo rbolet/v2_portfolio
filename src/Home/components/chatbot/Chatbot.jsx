@@ -1,4 +1,5 @@
 import styles from "../../styles/Chatbot.module.css";
+import ChatInput from "./ChatInput";
 import MsgDisplay from "./MsgDisplay";
 
 export default function Chatbot() {
@@ -6,6 +7,7 @@ export default function Chatbot() {
     <div className={styles.border}>
       <div className={styles.container}>
         <MsgDisplay />
+        <ChatInput />
       </div>
     </div>
   );

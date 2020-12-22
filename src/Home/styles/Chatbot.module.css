@@ -4,7 +4,7 @@
   flex-direction: column;
   flex-grow: 1;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .border {
@@ -25,4 +25,53 @@
   overflow-y: scroll;
   position: relative;
   backdrop-filter: blur(6px);
+}
+
+.inputContainer {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 2px solid white;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.form {
+  height: 100%;
+  width: 100%;
+  padding: 0.25rem;
+  display: flex;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.textInput {
+  height: 100%;
+  font-family: "Roboto";
+  flex-grow: 1;
+  border: none;
+  background-color: black;
+}
+
+.thinking {
+  display: flex;
+  margin: 0 0.5rem;
+}
+
+.thinking span {
+  animation: 1s blink infinite;
+  vertical-align: middle;
+  font-size: 2rem;
+}
+
+.button {
+  margin: 0.25rem;
+  background-color: black;
+  border: none;
+}
+@keyframes blink {
+  50% {
+    color: transparent;
+  }
 }

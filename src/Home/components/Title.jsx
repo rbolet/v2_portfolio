@@ -9,7 +9,7 @@ export default function Title() {
         <br />
         Bolet
         <br />
-        Javascript
+        {`Javascript`}
         <br />
         <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }} avgTypingDelay={120}>
           <span>Engineer</span>
