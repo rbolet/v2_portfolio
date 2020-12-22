@@ -9,7 +9,7 @@ export default function ChatInput() {
       <form className={styles.form}>
         <input className={styles.textInput} />
         <button className={styles.button}>
-          <FontAwesomeIcon icon={faPaperPlane} />
+          <FontAwesomeIcon icon={faPaperPlane} style={{ fontSize: "1.25rem" }} />
         </button>
       </form>
     </div>
@@ -18,10 +18,36 @@ export default function ChatInput() {
 
 function Thinking() {
   return (
-    <div className={styles.thinking}>
-      <span>.</span>
-      <span>.</span>
-      <span>.</span>
-    </div>
+    <>
+      <style jsx>{`
+        .thinking {
+          display: flex;
+          margin: 0 0.5rem;
+        }
+
+        .thinking span {
+          animation: 1s blink infinite;
+          vertical-align: middle;
+          font-size: 2rem;
+        }
+
+        .thinking span:nth-child(2) {
+          animation-delay: 250ms;
+        }
+        .thinking span:nth-child(3) {
+          animation-delay: 500ms;
+        }
+        @keyframes blink {
+          50% {
+            color: transparent;
+          }
+        }
+      `}</style>
+      <div className="thinking">
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+      </div>
+    </>
   );
 }
