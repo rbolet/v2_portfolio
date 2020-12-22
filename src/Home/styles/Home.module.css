@@ -57,5 +57,4 @@
 
 .cursor {
   animation: blink 1s steps(1, start) 0s infinite;
-  animation: name duration timing-function delay iteration-count direction fill-mode;
 }

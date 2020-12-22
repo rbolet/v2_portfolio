@@ -1,26 +1,7 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import Typist from "react-typist";
 import styles from "../styles/Home.module.css";
 
-const phrases = ["developer"];
-
 export default function Title() {
-  const [word, setWord] = useState(phrases[0]);
-  const [print, setPrint] = useState("");
-
-  useEffect(() => {
-    let index = 0;
-    while (index < word.length) {
-      printWord(index).then(index++);
-    }
-  }, []);
-
-  async function printWord(index) {
-    return await setTimeout(() => {
-      setPrint(`${print}${word[index]}`);
-    }, 500);
-  }
-
   return (
     <div className={styles.title}>
       <p>
@@ -28,8 +9,18 @@ export default function Title() {
         <br />
         Bolet
         <br />
-        {print}
-        <span className={styles.cursor}>_</span>
+        Javascript
+        <br />
+        <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }} avgTypingDelay={120}>
+          <span>Engineer</span>
+          <Typist.Backspace count={8} delay={1500} />
+          <span>Creator</span>
+          <Typist.Backspace count={7} delay={1500} />
+          <span>Builder</span>
+          <Typist.Backspace count={7} delay={1500} />
+          <span style={{ color: "yellow" }}>Developer</span>
+          <span className={styles.cursor}>|</span>
+        </Typist>
       </p>
     </div>
   );
