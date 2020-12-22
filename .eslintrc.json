@@ -1,0 +1,39 @@
+{
+  "env": {
+    "es2021": true,
+    "jest/globals": true,
+    "node": true,
+    "browser": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "quotes": ["warn", "double"],
+    "prettier/prettier": 2,
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+    "react/no-unescaped-entities": 0,
+    "react/display-name": "off",
+    "react/prop-types": [1, { "ignore": ["children", "navigation", "route", "theme"] }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

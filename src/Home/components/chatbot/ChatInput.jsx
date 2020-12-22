@@ -1,19 +1,31 @@
-import styles from "../../styles/Chatbot.module.css";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import styles from "../../styles/Chatbot.module.css";
 
 export default function ChatInput() {
+  const [thinking, setThinking] = useState(false);
   return (
     <div className={styles.inputContainer}>
-      <Thinking />
+      {thinking && <Thinking />}
       <form className={styles.form}>
-        <input className={styles.textInput} />
-        <button className={styles.button}>
+        <TextInput />
+        <button
+          className={styles.button}
+          onClick={(event) => {
+            event.preventDefault();
+            setThinking(!thinking);
+          }}
+        >
           <FontAwesomeIcon icon={faPaperPlane} style={{ fontSize: "1.25rem" }} />
         </button>
       </form>
     </div>
   );
+}
+
+function TextInput() {
+  return <input className={styles.textInput} />;
 }
 
 function Thinking() {
