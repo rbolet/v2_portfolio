@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../Home/styles/Home.module.css";
 import Title from "../Home/components/Title";
-import Chatbot from "../Home/components/Chatbot";
+import Chatbot from "../Home/components/chatbot/Chatbot";
 
 export default function Home() {
   return (
