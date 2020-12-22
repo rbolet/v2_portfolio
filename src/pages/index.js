@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../Home/styles/Home.module.css";
 import Title from "../Home/components/Title";
+import Chatbot from "../Home/components/Chatbot";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <main className={styles.beforeFold}>
         <section className={styles.row}>
           <Title />
+          <Chatbot />
         </section>
       </main>
     </>

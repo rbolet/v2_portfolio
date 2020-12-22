@@ -19,18 +19,10 @@
   background-size: cover;
 }
 
-.title-container {
+.container {
   display: flex;
   align-items: center;
   padding: 1rem;
-}
-
-.chatbot-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  border-radius: 10px;
 }
 
 .row {
