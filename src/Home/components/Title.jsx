@@ -49,11 +49,11 @@ export default function Title() {
             avgTypingDelay={120}
           >
             <span>Engineer</span>
-            <Typist.Backspace count={8} delay={1500} />
+            <Typist.Backspace count={8} delay={1200} />
             <span>Creator</span>
-            <Typist.Backspace count={7} delay={1500} />
+            <Typist.Backspace count={7} delay={1200} />
             <span>Builder</span>
-            <Typist.Backspace count={7} delay={1500} />
+            <Typist.Backspace count={7} delay={1200} />
             <span style={{ color: "yellow" }}>Developer</span>
           </Typist>
         )}
