@@ -2,24 +2,26 @@ import { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import { ChatbotContext } from "./Chatbot";
-import askBot from "./botlogic";
 import styles from "../../styles/Chatbot.module.css";
 
 export default function ChatInput() {
-  const [thinking, setThinking] = useState(false);
-  const { addMessage } = useContext(ChatbotContext);
+  const [inputText, setInputText] = useState("");
+  const { thinking, askBot } = useContext(ChatbotContext);
+
+  function handleChange(text) {
+    setInputText(text);
+  }
   return (
     <div className={styles.inputContainer}>
       {thinking && <Thinking />}
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          addMessage({ text: "check the log", source: "bot" });
-          askBot("I have a question. In fact, I have several! I think?");
+          askBot(inputText);
         }}
         className={styles.form}
       >
-        <TextInput />
+        <TextInput handleChange={handleChange} inputText={inputText} />
         <button className={styles.button} type="submit">
           <FontAwesomeIcon icon={faPaperPlane} style={{ fontSize: "1.25rem" }} />
         </button>
@@ -28,8 +30,17 @@ export default function ChatInput() {
   );
 }
 
-function TextInput() {
-  return <input className={styles.textInput} id="text-input" />;
+function TextInput({ handleChange, inputText }) {
+  return (
+    <input
+      className={styles.textInput}
+      id="text-input"
+      value={inputText}
+      onChange={(event) => {
+        handleChange(event.target.value);
+      }}
+    />
+  );
 }
 
 function Thinking() {
