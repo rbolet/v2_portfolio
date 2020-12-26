@@ -13,10 +13,11 @@ export default function ChatInput() {
   }
   return (
     <div className={styles.inputContainer}>
-      {thinking && <Thinking />}
+      <Thinking thinking={thinking} />
       <form
         onSubmit={(event) => {
           event.preventDefault();
+          setInputText("");
           askBot(inputText);
         }}
         className={styles.form}
@@ -43,10 +44,18 @@ function TextInput({ handleChange, inputText }) {
   );
 }
 
-function Thinking() {
+function Thinking({ thinking }) {
   return (
     <>
       <style jsx>{`
+        .hide {
+          visibility: hidden;
+        }
+
+        .show {
+          visibility: visible;
+        }
+
         .thinking {
           display: flex;
           margin: 0 0.5rem;
@@ -70,7 +79,7 @@ function Thinking() {
           }
         }
       `}</style>
-      <div className="thinking">
+      <div className={`thinking ${thinking ? "show" : "hide"}`}>
         <span>.</span>
         <span>.</span>
         <span>.</span>

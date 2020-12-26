@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import styles from "../../styles/Chatbot.module.css";
 import getBotResponse from "./botlogic";
 import ChatInput from "./ChatInput";
@@ -8,14 +8,23 @@ export const ChatbotContext = createContext(null);
 
 function ChatbotProvider({ children }) {
   const [messages, setMessages] = useState([]);
+  const [question, setQuestion] = useState("");
   const [thinking, setThinking] = useState(false);
 
-  async function askBot(text) {
+  useEffect(() => {
+    if (!question) return;
+    setTimeout(async () => {
+      const botResponse = await getBotResponse(question);
+      addMessage({ text: botResponse, source: "bot" });
+      setQuestion("");
+      setThinking(false);
+    }, 500);
+  }, [question]);
+
+  function askBot(text) {
     addMessage({ text, source: "user" });
     setThinking(true);
-    const botResponse = await getBotResponse(text);
-    addMessage({ text: botResponse, source: "bot" });
-    setThinking(false);
+    setQuestion(text);
   }
 
   function addMessage(newMessage) {
