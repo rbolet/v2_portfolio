@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import { ChatbotContext } from "./Chatbot";
+import askBot from "./botlogic";
 import styles from "../../styles/Chatbot.module.css";
 
 export default function ChatInput() {
@@ -14,6 +15,7 @@ export default function ChatInput() {
         onSubmit={(event) => {
           event.preventDefault();
           addMessage({ text: "check the log", source: "bot" });
+          askBot("I have a question. In fact, I have several! I think?");
         }}
         className={styles.form}
       >
