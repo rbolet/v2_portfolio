@@ -7,32 +7,35 @@ import MsgDisplay from "./MsgDisplay";
 export const ChatbotContext = createContext(null);
 
 function ChatbotProvider({ children }) {
-  const [messages, setMessages] = useState([]);
   const [question, setQuestion] = useState("");
   const [thinking, setThinking] = useState(false);
+  const [userMessage, setUserMessage] = useState("");
+  const [botMessageStack, setBotMessageStack] = useState([]);
 
   useEffect(() => {
+    console.log("?", question);
     if (!question) return;
-    setTimeout(() => {
-      const botResponse = getBotResponse(question);
-      addMessage({ text: botResponse, source: "bot" });
-      setQuestion("");
-      setThinking(false);
-    }, 500);
+    const response = getBotResponse(question);
+    console.log("bot > ", response);
+    setBotMessageStack(response);
   }, [question]);
 
   function askBot(text) {
-    addMessage({ text, source: "user" });
-    setThinking(true);
+    setUserMessage(text);
     setQuestion(text);
   }
 
-  function addMessage(newMessage) {
-    setMessages([newMessage, ...messages]);
-  }
-
   return (
-    <ChatbotContext.Provider value={{ messages, askBot, thinking }}>
+    <ChatbotContext.Provider
+      value={{
+        askBot,
+        thinking,
+        userMessage,
+        setUserMessage,
+        botMessageStack,
+        setBotMessageStack,
+      }}
+    >
       {children}
     </ChatbotContext.Provider>
   );
