@@ -3,8 +3,7 @@ import { KEYWORDS, RESPONSES } from "./keywords";
 export default function getBotResponse(text) {
   const wordArray = getWords(text);
   const matchingKeywords = matchKeyWords(wordArray);
-  const response = RESPONSES[matchingKeywords[0]].respond();
-  return Array.isArray(response) ? response : [response];
+  return RESPONSES[matchingKeywords[0]].respond();
 }
 
 function getWords(text) {

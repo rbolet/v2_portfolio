@@ -17,6 +17,8 @@ export default function ChatInput() {
       <form
         onSubmit={(event) => {
           event.preventDefault();
+          if (!inputText) return;
+
           setInputText("");
           askBot(inputText);
         }}

@@ -35,7 +35,7 @@ export const RESPONSES = {
   unknown: {
     phrases: ["I don't get it.", "I'm sorry, could you re-phrase that?"],
     respond() {
-      return this.phrases;
+      return this.phrases[Math.floor(Math.random() * this.phrases.length)];
     },
   },
 };

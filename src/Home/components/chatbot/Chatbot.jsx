@@ -13,8 +13,8 @@ function ChatbotProvider({ children }) {
 
   useEffect(() => {
     if (!question) return;
-    setTimeout(async () => {
-      const botResponse = await getBotResponse(question);
+    setTimeout(() => {
+      const botResponse = getBotResponse(question);
       addMessage({ text: botResponse, source: "bot" });
       setQuestion("");
       setThinking(false);
