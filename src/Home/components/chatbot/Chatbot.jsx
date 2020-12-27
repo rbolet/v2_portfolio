@@ -30,6 +30,7 @@ function ChatbotProvider({ children }) {
       value={{
         askBot,
         thinking,
+        setThinking,
         userMessage,
         setUserMessage,
         botMessageStack,

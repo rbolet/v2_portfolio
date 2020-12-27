@@ -31,6 +31,7 @@
 .inputContainer {
   height: 50px;
   width: 100%;
+  position: relative;
   display: flex;
   align-items: center;
   border: 2px solid white;
@@ -52,18 +53,7 @@
   font-family: "Roboto";
   flex-grow: 1;
   border: none;
-  background-color: black;
-}
-
-.thinking {
-  display: flex;
-  margin: 0 0.5rem;
-}
-
-.thinking span {
-  animation: 1s blink infinite;
-  vertical-align: middle;
-  font-size: 2rem;
+  background-color: transparent;
 }
 
 .button {

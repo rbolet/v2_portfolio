@@ -4,9 +4,13 @@ import Message from "./Message";
 import styles from "../../styles/Chatbot.module.css";
 
 export default function MsgDisplay() {
-  const { userMessage, setUserMessage, botMessageStack, setBotMessageStack } = useContext(
-    ChatbotContext,
-  );
+  const {
+    userMessage,
+    setUserMessage,
+    botMessageStack,
+    setBotMessageStack,
+    setThinking,
+  } = useContext(ChatbotContext);
   const [ChatElements, setChatElements] = useState([]);
 
   function createElement(text, source = "bot") {
@@ -25,16 +29,19 @@ export default function MsgDisplay() {
   }, [userMessage]);
 
   useEffect(() => {
-    console.log("stack", botMessageStack);
     if (!botMessageStack.length) return;
-    for (let i = 0; i < botMessageStack.length; i++) {
-      console.log(botMessageStack[i]);
-      if (typeof botMessageStack[i] === "string") {
-        setTimeout(() => {
-          setChatElements((prev) => [createElement(botMessageStack[i]), ...prev]);
-        }, i * 500 + 1000);
+    setThinking(true);
+    setTimeout(() => {
+      for (let i = 0; i < botMessageStack.length; i++) {
+        if (typeof botMessageStack[i] === "string") {
+          setTimeout(() => {
+            setChatElements((prev) => [createElement(botMessageStack[i]), ...prev]);
+          }, i * 500);
+        }
       }
-    }
+      setThinking(false);
+      setBotMessageStack([]);
+    }, 1200);
   }, [botMessageStack]);
 
   // const MessageElements = messages.map((message) => {

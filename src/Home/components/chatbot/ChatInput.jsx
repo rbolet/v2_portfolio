@@ -11,9 +11,10 @@ export default function ChatInput() {
   function handleChange(text) {
     setInputText(text);
   }
+
   return (
     <div className={styles.inputContainer}>
-      <Thinking thinking={thinking} />
+      {thinking && <Thinking thinking={thinking} />}
       <form
         onSubmit={(event) => {
           event.preventDefault();
@@ -36,6 +37,7 @@ export default function ChatInput() {
 function TextInput({ handleChange, inputText }) {
   return (
     <input
+      autoComplete={false}
       className={styles.textInput}
       id="text-input"
       value={inputText}
@@ -60,7 +62,14 @@ function Thinking({ thinking }) {
 
         .thinking {
           display: flex;
-          margin: 0 0.5rem;
+          position: absolute;
+          top: -65px;
+          left: 5px;
+          z-index: 5;
+          background-color: blue;
+          width: fit-content;
+          padding: 0.5rem 0.75rem;
+          border-radius: 10px;
         }
 
         .thinking span {
