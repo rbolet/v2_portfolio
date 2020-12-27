@@ -19,10 +19,6 @@ export default function MsgDisplay() {
   }
 
   useEffect(() => {
-    console.log("Elements", ChatElements);
-  }, [ChatElements]);
-
-  useEffect(() => {
     if (!userMessage) return;
     setChatElements([createElement(userMessage, "user"), ...ChatElements]);
     setUserMessage("");
