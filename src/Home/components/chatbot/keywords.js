@@ -16,17 +16,26 @@ export const KEYWORDS = {
 export const RESPONSES = {
   resume: {
     phrases: ["Let me get you a copy of my resume ..."],
-    render: null,
+    respond() {
+      return this.phrases[Math.floor(Math.random() * this.phrases.length)];
+    },
   },
   education: {
     phrases: ["This is where I went to school ..."],
-    render: null,
+    respond() {
+      return this.phrases[Math.floor(Math.random() * this.phrases.length)];
+    },
   },
   mobile: {
     phrases: ["Let me tell you a bit about my mobile dev experience"],
-    render: null,
+    respond() {
+      return this.phrases[Math.floor(Math.random() * this.phrases.length)];
+    },
   },
   unknown: {
-    phrases: ["I don't get it."],
+    phrases: ["I don't get it.", "I'm sorry, could you re-phrase that?"],
+    respond() {
+      return this.phrases;
+    },
   },
 };

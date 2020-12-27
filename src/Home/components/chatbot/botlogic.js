@@ -1,12 +1,10 @@
 import { KEYWORDS, RESPONSES } from "./keywords";
 
-export default async function getBotResponse(text) {
+export default function getBotResponse(text) {
   const wordArray = getWords(text);
-  console.log(wordArray);
   const matchingKeywords = matchKeyWords(wordArray);
-  console.log(matchingKeywords);
-
-  return RESPONSES[matchingKeywords[0]].phrases[0];
+  const response = RESPONSES[matchingKeywords[0]].respond();
+  return Array.isArray(response) ? response : [response];
 }
 
 function getWords(text) {
