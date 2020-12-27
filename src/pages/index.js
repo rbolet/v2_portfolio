@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "../Home/styles/Home.module.css";
+import Header from "../Header";
 import Title from "../Home/components/Title";
 import Chatbot from "../Home/components/chatbot/Chatbot";
 
@@ -10,7 +11,7 @@ export default function Home() {
         <title>Hi! I'm Rapha ...</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <nav className={styles.header} />
+      <Header />
       <main className={styles.beforeFold}>
         <section className={styles.row}>
           <Title />
