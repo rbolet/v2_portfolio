@@ -37,7 +37,6 @@ export default function ChatInput() {
 function TextInput({ handleChange, inputText }) {
   return (
     <input
-      autoComplete={false}
       className={styles.textInput}
       id="text-input"
       value={inputText}
