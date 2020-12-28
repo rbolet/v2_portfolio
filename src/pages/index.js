@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../Home/styles/Home.module.css";
-import Header from "../Header";
+import Header from "../shared/Header";
 import Title from "../Home/components/Title";
 import Chatbot from "../Home/components/chatbot/Chatbot";
 

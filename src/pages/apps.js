@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Header from "../Header";
+import Header from "../shared/Header";
 
 export default function Apps() {
   return (

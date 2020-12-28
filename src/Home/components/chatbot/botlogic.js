@@ -2,9 +2,7 @@ import { KEYWORDS, RESPONSES } from "./keywords";
 
 export default function getBotResponse(text) {
   const wordArray = getWords(text);
-  console.log("words", wordArray);
   const matchingKeywords = matchKeyWords(wordArray);
-  console.log("keywords", matchingKeywords);
   return RESPONSES[matchingKeywords[0]].respond();
 }
 

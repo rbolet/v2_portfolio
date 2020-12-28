@@ -13,10 +13,8 @@ function ChatbotProvider({ children }) {
   const [botMessageStack, setBotMessageStack] = useState([]);
 
   useEffect(() => {
-    console.log("?", question);
     if (!question) return;
     const response = getBotResponse(question);
-    console.log("bot > ", response);
     setBotMessageStack(response);
   }, [question]);
 
