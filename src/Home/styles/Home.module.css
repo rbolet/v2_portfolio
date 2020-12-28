@@ -13,8 +13,8 @@
   padding: 0 1.5rem;
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fit, mixmax(600px, 1fr));
   backdrop-filter: blur(15px);
   background-image: url("/assets/trianglify-lowres.png");
   background-size: cover;
@@ -31,7 +31,7 @@
   align-items: center;
   padding: 1rem 0;
   font-family: "Bungee";
-  font-size: calc(30px + (75 - 30) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(20px + (75 - 20) * ((100vw - 300px) / (1600 - 300)));
   flex-direction: column;
   justify-content: center;
 }
