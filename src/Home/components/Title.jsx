@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import Typist from "react-typist";
+// import Typist from "react-typist";
 import styles from "../styles/Home.module.css";
 
 export default function Title() {
-  const [done, setDone] = useState(false);
+  // const [done, setDone] = useState(false);
 
   return (
     <div className={styles.title}>
@@ -35,7 +35,7 @@ export default function Title() {
             }
           }
         `}</style>
-        {done ? (
+        {/* {done ? (
           <>
             <span style={{ color: "yellow" }}>Developer</span>
             <span className={styles.cursor}>|</span>
@@ -56,7 +56,9 @@ export default function Title() {
             <Typist.Backspace count={7} delay={1200} />
             <span style={{ color: "yellow" }}>Developer</span>
           </Typist>
-        )}
+        )} */}
+        <span style={{ color: "yellow" }}>Developer</span>
+        <span className={styles.cursor}>|</span>
       </p>
     </div>
   );
