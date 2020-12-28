@@ -13,7 +13,7 @@ function Header(props) {
     <>
       <style jsx>{`
         #app-header {
-          position: fixed;
+          position: sticky;
           top: 0;
           left: 0;
           width: 100%;
@@ -48,8 +48,8 @@ function Header(props) {
           max-height: 60px;
         }
 
-        #pageview-nav.collapse.show a {
-          display: inline-block;
+        .collapse.show {
+          padding: 4rem;
         }
 
         .navbar-dark .navbar-nav {
@@ -73,10 +73,17 @@ function Header(props) {
           <Navbar.Brand className="d-flex align-items-center p-2"></Navbar.Brand>
           <Navbar.Toggle aria-controls="pageview-nav" />
           <Navbar.Collapse className="justify-content-end" id="pageview-nav">
-            <Nav>
+            <Nav style={{ display: "flex", alignItems: "center" }}>
               <Nav.Item className="py-2" style={{ display: "flex", justifyContent: "center" }}>
                 <Link href="/apps" passHref={true}>
-                  <Nav.Link style={{ fontFamily: "Bungee", fontSize: "1.25rem", color: "white" }}>
+                  <Nav.Link
+                    style={{
+                      fontFamily: "Bungee",
+                      fontSize: "1.25rem",
+                      color: "white",
+                      padding: "0 4rem",
+                    }}
+                  >
                     Applications
                   </Nav.Link>
                 </Link>
@@ -86,21 +93,20 @@ function Header(props) {
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "space-around",
-                  marginBottom: "1rem",
                 }}
               >
                 <Link href="https://github.com/rbolet" passHref={true}>
-                  <Nav.Link target="_blank">
+                  <Nav.Link target="_blank" style={{ padding: "0 1.5rem" }}>
                     <FontAwesomeIcon icon={faGithub} size="2x" />
                   </Nav.Link>
                 </Link>
                 <Link href="https://linkedin.com/in/rbolet/" passHref={true}>
-                  <Nav.Link target="_blank">
+                  <Nav.Link target="_blank" style={{ padding: "0 1.5rem" }}>
                     <FontAwesomeIcon icon={faLinkedin} className="header-icon" size="2x" />
                   </Nav.Link>
                 </Link>
                 <Link href="mailto:this.rapha.dev@gmail.com" passHref={true}>
-                  <Nav.Link>
+                  <Nav.Link style={{ padding: "0 1.5rem" }}>
                     <FontAwesomeIcon icon={faEnvelope} size="2x" className="header-icon" />
                   </Nav.Link>
                 </Link>

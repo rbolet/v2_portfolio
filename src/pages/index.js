@@ -13,10 +13,8 @@ export default function Home() {
       </Head>
       <Header />
       <main className={styles.beforeFold}>
-        <section className={styles.row}>
-          <Title />
-          <Chatbot />
-        </section>
+        <Title />
+        <Chatbot />
       </main>
     </>
   );
