@@ -62,19 +62,25 @@ function Thinking({ thinking }) {
         .thinking {
           display: flex;
           position: absolute;
-          top: -65px;
+          top: -75px;
           left: 5px;
           z-index: 5;
           background-color: blue;
           width: fit-content;
           padding: 0.5rem 0.75rem;
           border-radius: 10px;
+          opacity: 0.85;
+        }
+
+        .thinking p {
+          margin: 0;
         }
 
         .thinking span {
           animation: 1s blink infinite;
           vertical-align: middle;
           font-size: 2rem;
+          margin: 0;
         }
 
         .thinking span:nth-child(2) {

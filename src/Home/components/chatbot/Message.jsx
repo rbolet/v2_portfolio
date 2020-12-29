@@ -25,7 +25,7 @@ export default function Message(props) {
         }
       `}</style>
       <div className={isResponse ? "message response" : "message entered"}>
-        <p>{text}</p>
+        <p style={{ verticalAlign: "middle", margin: 0 }}>{text}</p>
       </div>
     </>
   );

@@ -9,6 +9,7 @@ export const ChatbotContext = createContext(null);
 function ChatbotProvider({ children }) {
   const [question, setQuestion] = useState("");
   const [thinking, setThinking] = useState(false);
+  const [isNew, setIsNew] = useState(true);
   const [userMessage, setUserMessage] = useState("");
   const [botMessageStack, setBotMessageStack] = useState([]);
 
@@ -16,7 +17,17 @@ function ChatbotProvider({ children }) {
     if (!question) return;
     const response = getBotResponse(question);
     setBotMessageStack(response);
+    setQuestion("");
   }, [question]);
+
+  useEffect(() => {
+    if (isNew) {
+      setThinking(true);
+      setTimeout(() => {
+        setQuestion("intro");
+      }, 1000);
+    }
+  }, []);
 
   function askBot(text) {
     setUserMessage(text);
