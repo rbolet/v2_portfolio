@@ -5,7 +5,8 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Apps.module.css";
 
-export default function AppCard() {
+export default function AppCard(props) {
+  const { img, appName, subTitle } = props;
   return (
     <div className={styles.appCard}>
       <div className={styles.imageWrapper}>
@@ -22,13 +23,8 @@ export default function AppCard() {
         </div>
       </div>
       <div className={styles.appCardContent}>
-        <ul>
-          <li>Full-stack: React.js | Node/Express | MySQL</li>
-          <li>Fully mobile responsive using Bootstrap 4</li>
-          <li>Several</li>
-          <li>Other</li>
-          <li>Things</li>
-        </ul>
+        <li>Full-stack: React.js | Node/Express | MySQL</li>
+        <li>Fully mobile responsive using Bootstrap 4</li>
       </div>
       <div className={styles.appCardFooter}>
         <Link href="https://gradebook.slightlyskewedcreations.com">
