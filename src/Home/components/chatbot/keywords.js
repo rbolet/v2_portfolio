@@ -85,9 +85,21 @@ export const RESPONSES = {
     },
   },
   unknown: {
-    phrases: ["I don't get it.", "I'm sorry, could you re-phrase that?"],
+    phrases: [
+      "I don't get it.",
+      "I'm sorry, could you re-phrase that?",
+      "Type 'help' for a list of key words.",
+    ],
+    index: 0,
     respond() {
-      return this.phrases;
+      const response = this.phrases[this.index];
+      if (this.index >= 2) {
+        this.index = 0;
+      } else {
+        this.index += 1;
+      }
+
+      return [response];
     },
   },
   keywords: {
