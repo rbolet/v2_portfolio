@@ -29,14 +29,14 @@ export default function AppCard() {
           <li>Other</li>
           <li>Things</li>
         </ul>
-        <div className={styles.appCardFooter}>
-          <Link href="https://gradebook.slightlyskewedcreations.com">
-            <FontAwesomeIcon icon={faGithub} size="3x" />
-          </Link>
-          <Link href="https://gradebook.slightlyskewedcreations.com">
-            <FontAwesomeIcon icon={faExternalLinkAlt} size="3x" />
-          </Link>
-        </div>
+      </div>
+      <div className={styles.appCardFooter}>
+        <Link href="https://gradebook.slightlyskewedcreations.com">
+          <FontAwesomeIcon icon={faGithub} size="3x" />
+        </Link>
+        <Link href="https://gradebook.slightlyskewedcreations.com">
+          <FontAwesomeIcon icon={faExternalLinkAlt} size="3x" />
+        </Link>
       </div>
     </div>
   );

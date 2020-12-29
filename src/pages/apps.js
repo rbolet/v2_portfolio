@@ -11,7 +11,7 @@ export default function Apps() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header />
-      <main>
+      <main className={styles.beforeFold}>
         <section className="apps">
           <div className={styles.appsContainer}>
             <AppCard />
