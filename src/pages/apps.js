@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Header from "../shared/Header";
+import AppCard from "../Apps/components/AppCard";
 import styles from "../Apps/styles/Apps.module.css";
 
 export default function Apps() {
@@ -13,10 +14,9 @@ export default function Apps() {
       <main>
         <section className="apps">
           <div className={styles.appsContainer}>
-            <div className={styles.appCard}></div>
-            <div className={styles.appCard}></div>
-            <div className={styles.appCard}></div>
-            <div className={styles.appCard}></div>
+            <AppCard />
+            <AppCard />
+            <AppCard />
           </div>
         </section>
       </main>
