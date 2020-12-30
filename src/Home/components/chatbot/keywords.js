@@ -118,7 +118,7 @@ export const RESPONSES = {
   intro: {
     phrases: [
       "Hello there, Rapha here.",
-      "I'm a people person, and a talker, so I really wish I could have a conversation with every person who visits my portfolio site. But since I clearly can't, I figured this chatbot would be next closest thing. I made sure and programmed it will all the charm and charisma I am capable of. Soooo ... Your mileage may vary.",
+      "I'm a people person, and a talker, so I really wish I could have a conversation with every person who visits my portfolio site. But since I clearly can't, I figured this chatbot would be next closest thing. I made sure and programmed it with all the charm and charisma I am capable of. Soooo ... Your mileage may vary.",
       "You can ask for help or for a list of keywords at any time.",
       "What would you like to know about me?",
     ],
