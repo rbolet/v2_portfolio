@@ -70,18 +70,26 @@ function Header() {
           className="py-0"
           collapseOnSelect="true"
         >
-          <Navbar.Brand className="d-flex align-items-center p-2">
-            {pathname !== "/" && (
-              <Link href="/" passHref={true}>
-                <a>
-                  <FontAwesomeIcon
-                    style={{ cursor: "pointer" }}
-                    icon={faArrowAltCircleLeft}
-                    size="2x"
-                  />
-                </a>
-              </Link>
-            )}
+          <Navbar.Brand
+            className="d-flex align-items-center p-1"
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            <Link href="/" passHref={true}>
+              <a
+                style={{
+                  visibility: pathname !== "/" ? "visible" : "hidden",
+                  marginRight: ".5rem",
+                }}
+              >
+                <FontAwesomeIcon
+                  style={{ cursor: "pointer" }}
+                  icon={faArrowAltCircleLeft}
+                  size="lg"
+                />
+              </a>
+            </Link>
+
+            <h4 style={{ fontFamily: "bungee", margin: 0 }}>Meet Rapha</h4>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="pageview-nav" />
           <Navbar.Collapse className="justify-content-end" id="pageview-nav">
