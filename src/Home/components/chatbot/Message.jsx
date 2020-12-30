@@ -1,5 +1,6 @@
 export default function Message(props) {
-  const { isResponse, text } = props;
+  const { isResponse, text, link, download } = props;
+  console.log(props);
   return (
     <>
       <style jsx>{`
@@ -25,7 +26,23 @@ export default function Message(props) {
         }
       `}</style>
       <div className={isResponse ? "message response" : "message entered"}>
-        <p style={{ verticalAlign: "middle", margin: 0 }}>{text}</p>
+        {typeof link === "string" ? (
+          <a
+            style={{
+              verticalAlign: "middle",
+              margin: 0,
+              color: "white",
+              textDecoration: "underline",
+            }}
+            href={link}
+            target="_blank"
+            // download={download}
+          >
+            {text}
+          </a>
+        ) : (
+          <p style={{ verticalAlign: "middle", margin: 0 }}>{text}</p>
+        )}
       </div>
     </>
   );

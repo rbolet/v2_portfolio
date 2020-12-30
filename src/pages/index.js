@@ -1,8 +1,8 @@
 import Head from "next/head";
-import styles from "../Home/styles/Home.module.css";
 import Header from "../shared/Header";
 import Title from "../Home/components/Title";
 import Chatbot from "../Home/components/chatbot/Chatbot";
+import styles from "../Home/styles/Home.module.css";
 
 export default function Home() {
   return (

@@ -37,9 +37,9 @@ export const KEYWORDS = {
 
 export const RESPONSES = {
   resume: {
-    phrases: ["Let me get you a copy of my resume ..."],
+    phrases: ["Let me get you a copy of my resume ... just click here."],
     respond() {
-      return this.phrases;
+      return [{ text: this.phrases[0], link: "/assets/Rapha_Web_Resume.pdf", download: true }];
     },
   },
   education: {
@@ -138,10 +138,16 @@ export const RESPONSES = {
       "https://gmscreen.slightlyskewedcreations.com/",
       "and on GitHub at:",
       "https://github.com/rbolet/gm-screen",
-      "... I'm afraid you'll have to copy/paste for now, I'll be generating clickable links soon.",
     ],
     respond() {
-      return this.phrases;
+      const addLinks = this.phrases.map((phrase) => {
+        if (phrase.includes("http")) {
+          return { text: phrase, link: phrase, download: false };
+        } else {
+          return phrase;
+        }
+      });
+      return addLinks;
     },
   },
   gradeBook: {
@@ -153,10 +159,16 @@ export const RESPONSES = {
       "https://gradebook.slightlyskewedcreations.com/",
       "and on GitHub at:",
       "https://github.com/rbolet/gradebook",
-      "... I'm afraid you'll have to copy/paste for now, I'll be generating clickable links soon.",
     ],
     respond() {
-      return this.phrases;
+      const addLinks = this.phrases.map((phrase) => {
+        if (phrase.includes("http")) {
+          return { text: phrase, link: phrase, download: false };
+        } else {
+          return phrase;
+        }
+      });
+      return addLinks;
     },
   },
   matchGame: {
@@ -169,10 +181,16 @@ export const RESPONSES = {
       "https://memorymatch.slightlyskewedcreations.com/",
       "and on GitHub at:",
       "https://github.com/rbolet/memory-match",
-      "... I'm afraid you'll have to copy/paste for now, I'll be generating clickable links soon.",
     ],
     respond() {
-      return this.phrases;
+      const addLinks = this.phrases.map((phrase) => {
+        if (phrase.includes("http")) {
+          return { text: phrase, link: phrase, download: false };
+        } else {
+          return phrase;
+        }
+      });
+      return addLinks;
     },
   },
   chatBot: {
@@ -186,19 +204,35 @@ export const RESPONSES = {
       "Well ... you're looking at it.",
       "and on GitHub at:",
       "https://github.com/rbolet/v2_portfolio",
-      "... I'm afraid you'll have to copy/paste for now, I'll be generating clickable links soon.",
     ],
+    respond() {
+      const addLinks = this.phrases.map((phrase) => {
+        if (phrase.includes("http")) {
+          return { text: phrase, link: phrase, download: false };
+        } else {
+          return phrase;
+        }
+      });
+      return addLinks;
+    },
   },
   social: {
     phrases: [
       "The links to my GitHub, LinkedIn, and to start an e-mail are on the site header.",
-      "But just because you asked:",
+      "But just because you asked so nicely:",
       "https://github.com/rbolet",
       "https://linkedin.com/in/rbolet",
       "this.rapha.dev@gmail.com",
     ],
     respond() {
-      return this.phrases;
+      const addLinks = this.phrases.map((phrase) => {
+        if (phrase.includes("http")) {
+          return { text: phrase, link: phrase, download: false };
+        } else {
+          return phrase;
+        }
+      });
+      return addLinks;
     },
   },
 };

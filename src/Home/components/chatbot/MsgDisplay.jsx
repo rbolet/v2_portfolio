@@ -13,9 +13,18 @@ export default function MsgDisplay() {
   } = useContext(ChatbotContext);
   const [ChatElements, setChatElements] = useState([]);
 
-  function createElement(text, source = "bot") {
+  function createElement(response, source = "bot") {
+    console.log("🚀 ~ file: MsgDisplay.jsx ~ line 17 ~ createElement ~ response", response);
+
     const randomKey = (Date.now() * Math.floor(Math.random() * 99999999 + 1)).toString(15);
-    return <Message text={text} isResponse={source === "bot"} key={randomKey} />;
+    return (
+      <Message
+        text={typeof response === "string" ? response : response.text}
+        isResponse={source === "bot"}
+        key={randomKey}
+        link={response.link ? response.link : null}
+      />
+    );
   }
 
   useEffect(() => {
@@ -29,11 +38,9 @@ export default function MsgDisplay() {
     setThinking(true);
     setTimeout(() => {
       for (let i = 0; i < botMessageStack.length; i++) {
-        if (typeof botMessageStack[i] === "string") {
-          setTimeout(() => {
-            setChatElements((prev) => [createElement(botMessageStack[i]), ...prev]);
-          }, i * 500);
-        }
+        setTimeout(() => {
+          setChatElements((prev) => [createElement(botMessageStack[i]), ...prev]);
+        }, i * 500);
       }
       setThinking(false);
       setBotMessageStack([]);
