@@ -24,7 +24,7 @@
   {
     "img": "/assets/gmscreen_start.gif",
     "appName": "GM Screen",
-    "subtitle": "A tool to increase immersion for roleplaying groups",
+    "subtitle": "An image-sharing tool for roleplaying groups",
     "bulletPoints": [
       "Full Stack: React.js | Node/Express | MySQL",
       "Responsive down to tablet size using Bootstrap 4",

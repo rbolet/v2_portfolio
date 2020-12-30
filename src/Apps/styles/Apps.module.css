@@ -1,5 +1,5 @@
 .beforeFold {
-  padding: 1rem;
+  padding: 2rem 1rem;
   min-height: calc(100vh - 60px);
   backdrop-filter: blur(15px);
   background-image: url("/assets/trianglify-lowres.png");
@@ -34,21 +34,21 @@
 .imageCaption {
   position: absolute;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
+  font-family: "VT323";
   width: 100%;
   color: white;
   padding: 0.75rem;
+  border-bottom: 1px solid white;
 }
 
 .imageCaption > h3 {
   margin: 0;
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.75rem;
 }
 
 .imageCaption > p {
   margin: 0;
-  font-size: 0.75rem;
 }
 
 .appCardContent {
@@ -57,11 +57,13 @@
 
 .appCardFooter {
   position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  right: 1rem;
-  border-top: 1px solid white;
-  padding-top: 1rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 255, 0.75);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding: 1rem 0;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;

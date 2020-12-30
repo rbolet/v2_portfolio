@@ -34,7 +34,11 @@ export default function AppCard(props) {
       </div>
       <div className={styles.appCardFooter}>
         {gitHubRoute && (
-          <a href={`https://github.com/rbolet/${gitHubRoute}`} target="_blank">
+          <a
+            href={`https://github.com/rbolet/${gitHubRoute}`}
+            target="_blank"
+            style={{ color: "blue" }}
+          >
             <FontAwesomeIcon icon={faGithub} size="3x" />
           </a>
         )}

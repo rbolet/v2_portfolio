@@ -64,7 +64,11 @@ function Header() {
       `}</style>
       <div id="app-header">
         <Navbar
-          style={{ backgroundColor: "black", minHeight: "70px" }}
+          style={{
+            background: "linear-gradient(319deg, rgba(0,0,0,1) 5%, rgba(11,11,11,1) 100%)",
+            minHeight: "70px",
+            boxShadow: "0px 2px 3px 3px rgba(33,33,33,.85)",
+          }}
           variant="dark"
           expand="lg"
           className="py-0"
