@@ -1,14 +1,14 @@
-import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faEnvelope, faArrowAltCircleLeft } from "@fortawesome/free-regular-svg-icons";
 
-function Header(props) {
+function Header() {
+  const { pathname } = useRouter();
+
   return (
     <>
       <style jsx>{`
@@ -70,7 +70,19 @@ function Header(props) {
           className="py-0"
           collapseOnSelect="true"
         >
-          <Navbar.Brand className="d-flex align-items-center p-2"></Navbar.Brand>
+          <Navbar.Brand className="d-flex align-items-center p-2">
+            {pathname !== "/" && (
+              <Link href="/" passHref={true}>
+                <a>
+                  <FontAwesomeIcon
+                    style={{ cursor: "pointer" }}
+                    icon={faArrowAltCircleLeft}
+                    size="2x"
+                  />
+                </a>
+              </Link>
+            )}
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="pageview-nav" />
           <Navbar.Collapse className="justify-content-end" id="pageview-nav">
             <Nav style={{ display: "flex", alignItems: "center" }}>
@@ -84,7 +96,7 @@ function Header(props) {
                       padding: "0 4rem",
                     }}
                   >
-                    Applications
+                    Portfolio
                   </Nav.Link>
                 </Link>
               </Nav.Item>

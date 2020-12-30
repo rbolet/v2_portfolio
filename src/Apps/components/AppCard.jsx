@@ -26,7 +26,11 @@ export default function AppCard(props) {
         </div>
       </div>
       <div className={styles.appCardContent}>
-        {bulletPoints?.length && bulletPoints.map((string) => <li>{string}</li>)}
+        {bulletPoints?.length &&
+          bulletPoints.map((string) => {
+            const randomKey = (Date.now() * Math.floor(Math.random() * 99999999 + 1)).toString(15);
+            return <li key={randomKey}>{string}</li>;
+          })}
       </div>
       <div className={styles.appCardFooter}>
         {gitHubRoute && (

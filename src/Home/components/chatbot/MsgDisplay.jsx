@@ -40,9 +40,6 @@ export default function MsgDisplay() {
     }, 1200);
   }, [botMessageStack]);
 
-  // const MessageElements = messages.map((message) => {
-  //   return <Message text={message.text} isResponse={message.source === "bot"} key={randomKey} />;
-  // });
   return (
     <>
       <div className={styles.messageContainer}>{ChatElements}</div>

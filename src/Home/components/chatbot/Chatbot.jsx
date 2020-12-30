@@ -26,8 +26,9 @@ function ChatbotProvider({ children }) {
       setTimeout(() => {
         setQuestion("intro");
       }, 1000);
+      setIsNew(false);
     }
-  }, []);
+  }, [isNew]);
 
   function askBot(text) {
     setUserMessage(text);

@@ -16,16 +16,22 @@ export default function Apps() {
         <section className="apps">
           <div className={styles.appsContainer}>
             {appList?.length &&
-              appList.map((data) => (
-                <AppCard
-                  img={data.img}
-                  appName={data.appName}
-                  subtitle={data.subtitle}
-                  bulletPoints={data.bulletPoints}
-                  gitHubRoute={data.gitHubRoute}
-                  sscRoute={data.sscRoute}
-                />
-              ))}
+              appList.map((data) => {
+                const randomKey = (Date.now() * Math.floor(Math.random() * 99999999 + 1)).toString(
+                  15,
+                );
+                return (
+                  <AppCard
+                    img={data.img}
+                    appName={data.appName}
+                    subtitle={data.subtitle}
+                    bulletPoints={data.bulletPoints}
+                    gitHubRoute={data.gitHubRoute}
+                    sscRoute={data.sscRoute}
+                    key={randomKey}
+                  />
+                );
+              })}
           </div>
         </section>
       </main>
