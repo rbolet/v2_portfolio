@@ -2,6 +2,7 @@ import Head from "next/head";
 import Header from "../shared/Header";
 import AppCard from "../Apps/components/AppCard";
 import styles from "../Apps/styles/Apps.module.css";
+import appList from "../Apps/data/appdata.json";
 
 export default function Apps() {
   return (
@@ -14,9 +15,17 @@ export default function Apps() {
       <main className={styles.beforeFold}>
         <section className="apps">
           <div className={styles.appsContainer}>
-            <AppCard />
-            <AppCard />
-            <AppCard />
+            {appList?.length &&
+              appList.map((data) => (
+                <AppCard
+                  img={data.img}
+                  appName={data.appName}
+                  subtitle={data.subtitle}
+                  bulletPoints={data.bulletPoints}
+                  gitHubRoute={data.gitHubRoute}
+                  sscRoute={data.sscRoute}
+                />
+              ))}
           </div>
         </section>
       </main>

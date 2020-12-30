@@ -1,0 +1,24 @@
+[
+  {
+    "img": "/assets/gradebook.gif",
+    "appName": "Gradebook",
+    "subtitle": "A simple tool to track student grades",
+    "bulletPoints": [
+      "Full-stack: React.js | Node/Express | MySQL",
+      "Fully mobile responsive using Bootstrap 4"
+    ],
+    "gitHubRoute": "gradebook",
+    "sscRoute": "gradebook"
+  },
+  {
+    "img": "/assets/memmatch.gif",
+    "appName": "Memory Match",
+    "subtitle": "Web Dev themed memory match game",
+    "bulletPoints": [
+      "Simple exercise in frontend development: JavaScript | jQuery",
+      "Fully mobile responsive using plain CSS"
+    ],
+    "gitHubRoute": "memory-match",
+    "sscRoute": "memorymatch"
+  }
+]
