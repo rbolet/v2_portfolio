@@ -33,5 +33,15 @@
     ],
     "gitHubRoute": "gm-screen",
     "sscRoute": "gmscreen"
+  },
+  {
+    "appName": "Chatbot",
+    "subtitle": "A fun interactive way to get to know me",
+    "bulletPoints": [
+      "React.js and Next.js",
+      "Fully mobile responsive using CSS Grid",
+      "Pretty sure you've seen it already :)"
+    ],
+    "gitHubRoute": "v2_portfolio"
   }
 ]

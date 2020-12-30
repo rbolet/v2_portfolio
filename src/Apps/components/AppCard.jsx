@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
@@ -31,14 +30,14 @@ export default function AppCard(props) {
       </div>
       <div className={styles.appCardFooter}>
         {gitHubRoute && (
-          <Link href={`https://${gitHubRoute}.slightlyskewedcreations.com`}>
+          <a href={`https://github.com/rbolet/${gitHubRoute}`} target="_blank">
             <FontAwesomeIcon icon={faGithub} size="3x" />
-          </Link>
+          </a>
         )}
         {sscRoute && (
-          <Link href={`https://${sscRoute}.slightlyskewedcreations.com`}>
+          <a href={`https://${sscRoute}.slightlyskewedcreations.com`} target="_blank">
             <FontAwesomeIcon icon={faExternalLinkAlt} size="3x" />
-          </Link>
+          </a>
         )}
       </div>
     </div>
