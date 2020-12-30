@@ -5,8 +5,6 @@ import getBotResponse from "./botlogic";
 import ChatInput from "./ChatInput";
 import MsgDisplay from "./MsgDisplay";
 import styles from "../../styles/Chatbot.module.css";
-import modalStyles from "../../styles/Modal.module.css";
-
 export const ChatbotContext = createContext(null);
 
 function ChatbotProvider({ children }) {
@@ -48,8 +46,6 @@ function ChatbotProvider({ children }) {
         setUserMessage,
         botMessageStack,
         setBotMessageStack,
-        showModal,
-        setShowModal,
       }}
     >
       {children}
@@ -67,15 +63,5 @@ export default function Chatbot() {
         </div>
       </div>
     </ChatbotProvider>
-  );
-}
-
-function Resume() {
-  return (
-    <div className={modalStyles.modalBlur}>
-      <Document file="/assets/Rapha_Web_Resume.pdf">
-        <Page pageNumber={1} />
-      </Document>
-    </div>
   );
 }
