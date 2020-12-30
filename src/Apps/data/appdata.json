@@ -20,5 +20,18 @@
     ],
     "gitHubRoute": "memory-match",
     "sscRoute": "memorymatch"
+  },
+  {
+    "img": "/assets/gmscreen_start.gif",
+    "appName": "GM Screen",
+    "subtitle": "A tool to increase immersion for roleplaying groups",
+    "bulletPoints": [
+      "Full Stack: React.js | Node/Express | MySQL",
+      "Responsive down to tablet size using Bootstrap 4",
+      "Two separate portals for 'Game Masters' (GMs) and players",
+      "Uses Socket.io (websockets) to allow GMs to simultaneously push images to the display of all players logged into a game session"
+    ],
+    "gitHubRoute": "gm-screen",
+    "sscRoute": "gmscreen"
   }
 ]
