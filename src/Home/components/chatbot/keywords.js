@@ -33,9 +33,32 @@ export const KEYWORDS = {
   "e-mail": "social",
   email: "social",
   mail: "social",
+  from: "from",
+  location: "from",
+  located: "from",
+  address: "personal",
+  phone: "personal",
+  weight: "personal",
 };
 
 export const RESPONSES = {
+  personal: {
+    phrases: [
+      "That's a bit personal, don't you think?",
+      "Um ... we kind of just met, sooooo ...",
+      "Did you know that apparently I'm the only Google result with my first and last name in the country? So yeah ... I'm a bit fuzzy on details until we've spoken a bit longer.",
+    ],
+    respond() {
+      return [this.phrases[Math.floor(Math.random() * this.phrases.length)]];
+    },
+  },
+  from: {
+    respond() {
+      return [
+        `If you're asking where I'm from, I currently live in southern California. I'm "from" all over the place ... long-ish story.`,
+      ];
+    },
+  },
   resume: {
     phrases: ["Let me get you a copy of my resume ... just click here."],
     respond() {
@@ -88,18 +111,11 @@ export const RESPONSES = {
     phrases: [
       "I don't get it.",
       "I'm sorry, could you re-phrase that?",
-      "Type 'help' for a list of key words.",
+      "Try speaking slowly and clearly into the microphone.",
     ],
-    index: 0,
     respond() {
-      const response = this.phrases[this.index];
-      if (this.index >= 2) {
-        this.index = 0;
-      } else {
-        this.index += 1;
-      }
-
-      return [response];
+      const randomI = Math.floor(Math.random * this.phrases.length);
+      return [this.phrases[randomI], "You can also type 'help' for a list of key words."];
     },
   },
   keywords: {
