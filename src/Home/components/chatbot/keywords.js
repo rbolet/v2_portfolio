@@ -114,8 +114,12 @@ export const RESPONSES = {
       "Try speaking slowly and clearly into the microphone.",
     ],
     respond() {
-      const randomI = Math.floor(Math.random * this.phrases.length);
-      return [this.phrases[randomI], "You can also type 'help' for a list of key words."];
+      const randomI = Math.floor(Math.random() * this.phrases.length);
+      const responsePlusHelp = [
+        this.phrases[randomI],
+        "You can also type 'help' for a list of key words.",
+      ];
+      return responsePlusHelp;
     },
   },
   keywords: {

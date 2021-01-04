@@ -1,6 +1,5 @@
 export default function Message(props) {
   const { isResponse, text, link, download } = props;
-  console.log(props);
   return (
     <>
       <style jsx>{`
