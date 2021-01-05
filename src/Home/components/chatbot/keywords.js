@@ -39,6 +39,7 @@ export const KEYWORDS = {
   address: "personal",
   phone: "personal",
   weight: "personal",
+  why: "complex",
 };
 
 export const RESPONSES = {
@@ -47,6 +48,16 @@ export const RESPONSES = {
       "That's a bit personal, don't you think?",
       "Um ... we kind of just met, sooooo ...",
       "Did you know that apparently I'm the only Google result with my first and last name in the country? So yeah ... I'm a bit fuzzy on details until we've spoken a bit longer.",
+    ],
+    respond() {
+      return [this.phrases[Math.floor(Math.random() * this.phrases.length)]];
+    },
+  },
+  complex: {
+    phrases: [
+      "Why is kind of too deep a question for a chatbot, don't you think?",
+      "Listen, I'm a simple chatbot, that's waaaay above my paygrade.",
+      "I just work here, ok?",
     ],
     respond() {
       return [this.phrases[Math.floor(Math.random() * this.phrases.length)]];
