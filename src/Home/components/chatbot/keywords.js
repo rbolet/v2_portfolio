@@ -20,6 +20,7 @@ export const KEYWORDS = {
   development: "webOrMobile",
   project: "webOrMobile",
   projects: "webOrMobile",
+  portfolio: "webOrMobile",
   "gm-screen": "gmScreen",
   gm: "gmScreen",
   memory: "matchGame",
@@ -150,8 +151,8 @@ export const RESPONSES = {
     phrases: [
       "Hello there, Rapha here.",
       "I'm a people person, and a talker, so I really wish I could have a conversation with every person who visits my portfolio site. But since I clearly can't, I figured this chatbot would be next closest thing. I made sure and programmed it with all the charm and charisma I am capable of. Soooo ... Your mileage may vary.",
-      "You can ask for help or for a list of keywords at any time.",
-      "What would you like to know about me?",
+      "You can ask for HELP or for a list of KEYWORDS at any time.",
+      "I designed this chatbot primarily for development/recruiting purposes, so it will work best talking about my EXPERIENCE, EDUCATION, or just skip the small talk and get a copy of my RESUME.",
     ],
     respond() {
       return this.phrases;
