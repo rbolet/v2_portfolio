@@ -100,7 +100,7 @@ export const RESPONSES = {
       "It's a contract project and the app is not mine, so I'm afraid I can't show you the code ... but I can give you an idea of the features and the tech used:",
       "I used AWS Cognito and JSON Web Tokens using the Amplify library to manage secure user logins, and built a Node.js/Express/Postgres backend API from scratch to give full CRUD functionality of users, business, jobs, and more. I also integrated Socket.io (websocket-like) to handle real-time messaging and notifications.",
       `The UI was created using a Material-UI for React Native called Paper, and React Navigation as the router to navigate between screens. Other features like background location tracking and uploading images from the device's "camera roll" (to a S3 bucket) were integrated using Expo APIs.`,
-      "This project is still ongoing (part-time) and I am looking forward to deeping my React Native knowledge and hopefully picking up Kotlin and/or Swift in the near future.",
+      "This project is still ongoing (part-time) and I am looking forward to deepening my React Native knowledge and hopefully picking up Kotlin and/or Swift in the near future.",
     ],
     respond() {
       return this.phrases;
